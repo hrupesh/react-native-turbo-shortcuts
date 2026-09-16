@@ -1,6 +1,6 @@
 {
   "name": "react-native-turbo-shortcuts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "High-performance App Shortcuts and Quick Actions for React Native using TurboModules",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
