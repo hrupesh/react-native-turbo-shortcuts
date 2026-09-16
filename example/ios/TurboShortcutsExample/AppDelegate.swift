@@ -2,6 +2,7 @@ import UIKit
 import React
 import React_RCTAppDelegate
 import ReactAppDependencyProvider
+import TurboShortcuts
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,6 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     return true
   }
+
+  func application(
+    _ application: UIApplication,
+    performActionFor shortcutItem: UIApplicationShortcutItem,
+    completionHandler: @escaping (Bool) -> Void
+  ) {
+    TurboShortcutsLaunchHandler.shared.launchShortcut = shortcutItem
+    completionHandler(true)
+  }
+  
 }
 
 class ReactNativeDelegate: RCTDefaultReactNativeFactoryDelegate {

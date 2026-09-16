@@ -1,21 +1,38 @@
-#import "TurboShortcuts.h"
+//
+//  TurboShortcuts.mm
+//  
+//
+//  Created by Rupesh Chaudhari.
+//
+#import <React/RCTBridgeModule.h>
 
-@implementation TurboShortcuts
-- (NSNumber *)multiply:(double)a b:(double)b {
-    NSNumber *result = @(a * b);
+@interface RCT_EXTERN_MODULE(TurboShortcuts, NSObject)
 
-    return result;
-}
+RCT_EXTERN_METHOD(setShortcuts:(NSArray *)shortcuts
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  reject:(RCTPromiseRejectBlock)reject)
 
-- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
-    (const facebook::react::ObjCTurboModule::InitParams &)params
+RCT_EXTERN_METHOD(addShortcut:(NSDictionary *)shortcut
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  reject:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(removeShortcut:(NSString *)id
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  reject:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(clearShortcuts:(RCTPromiseResolveBlock)resolve
+                  reject:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(getShortcuts:(RCTPromiseResolveBlock)resolve
+                  reject:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN__BLOCKING_SYNCHRONOUS_METHOD(getLaunchShortcut)
+
+RCT_EXTERN__BLOCKING_SYNCHRONOUS_METHOD(getMaxShortcuts)
+
++ (BOOL)requiresMainQueueSetup
 {
-    return std::make_shared<facebook::react::NativeTurboShortcutsSpecJSI>(params);
-}
-
-+ (NSString *)moduleName
-{
-  return @"TurboShortcuts";
+  return NO;
 }
 
 @end
