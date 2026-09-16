@@ -1,7 +1,7 @@
 {
   "name": "react-native-turbo-shortcuts",
-  "version": "0.1.0",
-  "description": "Add dynamic app shortcuts to your react native apps with New Architecture",
+  "version": "1.0.0",
+  "description": "High-performance App Shortcuts and Quick Actions for React Native using TurboModules",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
   "exports": {
@@ -45,7 +45,12 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "turbomodule",
+    "new-architecture",
+    "shortcuts",
+    "quick-actions",
+    "app-shortcuts"
   ],
   "repository": {
     "type": "git",
